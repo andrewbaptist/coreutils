@@ -328,7 +328,7 @@ dependencies = [
  "glob",
  "hex-literal",
  "libc",
- "nix",
+ "nix 0.26.2",
  "once_cell",
  "phf",
  "phf_codegen",
@@ -602,7 +602,7 @@ dependencies = [
  "cfg-if 1.0.0",
  "crossbeam-utils",
  "lazy_static",
- "memoffset",
+ "memoffset 0.6.5",
  "scopeguard",
 ]
 
@@ -667,7 +667,7 @@ version = "3.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b37feaa84e6861e00a1f5e5aa8da3ee56d605c9992d33e082786754828e20865"
 dependencies = [
- "nix",
+ "nix 0.24.3",
  "winapi 0.3.9",
 ]
 
@@ -1060,9 +1060,9 @@ checksum = "830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55"
 
 [[package]]
 name = "libc"
-version = "0.2.126"
+version = "0.2.139"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "349d5a591cd28b49e1d1037471617a32ddcda5731b99419008085f72d5a53836"
+checksum = "201de327520df007757c1f0adce6e827fe8562fbc28bfd9c15571c66ca1f5f79"
 
 [[package]]
 name = "libloading"
@@ -1151,6 +1151,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "memoffset"
+version = "0.7.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5de893c32cde5f383baa4c04c5d6dbdd735cfd4a794b0debdb2bb1b421da5ff4"
+dependencies = [
+ "autocfg",
+]
+
+[[package]]
 name = "minimal-lexical"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1179,14 +1188,27 @@ dependencies = [
 
 [[package]]
 name = "nix"
-version = "0.24.2"
+version = "0.24.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "195cdbc1741b8134346d515b3a56a1c94b0912758009cfd53f99ea0f57b065fc"
+checksum = "fa52e972a9a719cecb6864fb88568781eb706bac2cd1d4f04a648542dbf78069"
 dependencies = [
  "bitflags",
  "cfg-if 1.0.0",
  "libc",
- "memoffset",
+]
+
+[[package]]
+name = "nix"
+version = "0.26.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bfdda3d196821d6af13126e40375cdf7da646a96114af134d5f417a9a1dc8e1a"
+dependencies = [
+ "bitflags",
+ "cfg-if 1.0.0",
+ "libc",
+ "memoffset 0.7.1",
+ "pin-utils",
+ "static_assertions",
 ]
 
 [[package]]
@@ -1436,6 +1458,12 @@ checksum = "b6796ad771acdc0123d2a88dc428b5e38ef24456743ddb1744ed628f9815c096"
 dependencies = [
  "siphasher",
 ]
+
+[[package]]
+name = "pin-utils"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 
 [[package]]
 name = "pkg-config"
@@ -1840,6 +1868,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
 
 [[package]]
+name = "static_assertions"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
+
+[[package]]
 name = "strsim"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2149,7 +2183,7 @@ version = "0.0.14"
 dependencies = [
  "atty",
  "clap 3.1.18",
- "nix",
+ "nix 0.26.2",
  "thiserror",
  "unix_socket",
  "uucore",
@@ -2488,7 +2522,7 @@ name = "uu_kill"
 version = "0.0.14"
 dependencies = [
  "clap 3.1.18",
- "nix",
+ "nix 0.26.2",
  "uucore",
 ]
 
@@ -2578,7 +2612,7 @@ dependencies = [
  "atty",
  "clap 3.1.18",
  "crossterm",
- "nix",
+ "nix 0.26.2",
  "unicode-segmentation",
  "unicode-width",
  "uucore",
@@ -2599,7 +2633,7 @@ version = "0.0.14"
 dependencies = [
  "clap 3.1.18",
  "libc",
- "nix",
+ "nix 0.26.2",
  "uucore",
 ]
 
@@ -2905,7 +2939,7 @@ version = "0.0.14"
 dependencies = [
  "clap 3.1.18",
  "libc",
- "nix",
+ "nix 0.26.2",
  "notify",
  "uucore",
  "winapi 0.3.9",
@@ -2938,7 +2972,7 @@ version = "0.0.14"
 dependencies = [
  "clap 3.1.18",
  "libc",
- "nix",
+ "nix 0.26.2",
  "uucore",
 ]
 
@@ -3066,7 +3100,7 @@ dependencies = [
  "bytecount",
  "clap 3.1.18",
  "libc",
- "nix",
+ "nix 0.26.2",
  "unicode-width",
  "utf-8",
  "uucore",
@@ -3096,7 +3130,7 @@ version = "0.0.14"
 dependencies = [
  "clap 3.1.18",
  "libc",
- "nix",
+ "nix 0.26.2",
  "uucore",
 ]
 
@@ -3111,7 +3145,7 @@ dependencies = [
  "dunce",
  "itertools",
  "libc",
- "nix",
+ "nix 0.26.2",
  "once_cell",
  "os_display",
  "thiserror",
